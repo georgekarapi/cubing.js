@@ -41,20 +41,22 @@ export class Twisty3DSceneWrapper
   }
 
   async connectedCallback(): Promise<void> {
-    this.addCSS(twistyViewerWrapperCSS);
-    const vantage = new Twisty3DVantage(this.model, this);
-    this.addVantage(vantage);
-    if (this.model) {
-      this.#freshListenerManager.addMultiListener(
-        [this.model.puzzleLoader, this.model.visualizationStrategy],
-        this.onPuzzle.bind(this),
-      );
-      this.#freshListenerManager.addListener(
-        this.model.backView,
-        this.onBackView.bind(this),
-      );
+    if(Array.from(this.#vantages.values()).length < 1) {
+      this.addCSS(twistyViewerWrapperCSS);
+      const vantage = new Twisty3DVantage(this.model, this);
+      this.addVantage(vantage);
+      if (this.model) {
+        this.#freshListenerManager.addMultiListener(
+          [this.model.puzzleLoader, this.model.visualizationStrategy],
+          this.onPuzzle.bind(this),
+        );
+        this.#freshListenerManager.addListener(
+          this.model.backView,
+          this.onBackView.bind(this),
+        );
+      }
+      this.scheduleRender();
     }
-    this.scheduleRender();
   }
 
   #backViewVantage: Twisty3DVantage | null = null;
