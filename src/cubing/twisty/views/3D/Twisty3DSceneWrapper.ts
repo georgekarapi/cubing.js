@@ -41,7 +41,7 @@ export class Twisty3DSceneWrapper
   }
 
   async connectedCallback(): Promise<void> {
-    if(Array.from(this.#vantages.values()).length < 1) {
+    if(this.#vantages.size === 0) {
       this.addCSS(twistyViewerWrapperCSS);
       const vantage = new Twisty3DVantage(this.model, this);
       this.addVantage(vantage);
@@ -61,24 +61,25 @@ export class Twisty3DSceneWrapper
 
   #backViewVantage: Twisty3DVantage | null = null;
   setBackView(backView: BackViewLayout): void {
-    const shouldHaveBackView = ["side-by-side", "top-right"].includes(backView);
-    const hasBackView = this.#backViewVantage !== null;
+    // skip backView as not needed
+    // const shouldHaveBackView = ["side-by-side", "top-right"].includes(backView);
+    // const hasBackView = this.#backViewVantage !== null;
 
-    this.#backViewClassListManager.setValue(backView);
-    if (shouldHaveBackView) {
-      if (!hasBackView) {
-        this.#backViewVantage = new Twisty3DVantage(this.model, this, {
-          backView: true,
-        });
-        this.addVantage(this.#backViewVantage);
-        this.scheduleRender();
-      }
-    } else {
-      if (this.#backViewVantage) {
-        this.removeVantage(this.#backViewVantage);
-        this.#backViewVantage = null;
-      }
-    }
+    // this.#backViewClassListManager.setValue(backView);
+    // if (shouldHaveBackView) {
+    //   if (!hasBackView) {
+    //     this.#backViewVantage = new Twisty3DVantage(this.model, this, {
+    //       backView: true,
+    //     });
+    //     this.addVantage(this.#backViewVantage);
+    //     this.scheduleRender();
+    //   }
+    // } else {
+    //   if (this.#backViewVantage) {
+    //     this.removeVantage(this.#backViewVantage);
+    //     this.#backViewVantage = null;
+    //   }
+    // }
   }
 
   onBackView(backView: BackViewLayout): void {

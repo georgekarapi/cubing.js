@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/kpuzzle/svg.ts"],
+  "sourcesContent": ["import { Alg } from \"../../../../cubing/alg\";\nimport type { KPuzzle } from \"../../../../cubing/kpuzzle\";\nimport { puzzles } from \"../../../../cubing/puzzles\";\nimport { ExperimentalKPuzzleSVGWrapper } from \"../../../../cubing/twisty\";\n\nclass SVGDisplay {\n  private svg: ExperimentalKPuzzleSVGWrapper;\n  constructor(private kpuzzle: KPuzzle, svg: string) {\n    this.svg = new ExperimentalKPuzzleSVGWrapper(kpuzzle, svg);\n  }\n\n  public element(): HTMLElement {\n    return this.svg.wrapperElement;\n  }\n\n  public setAlg(alg: Alg): void {\n    this.svg.draw(this.kpuzzle.algToTransformation(alg).toKState());\n  }\n}\n\n(async () => {\n  const puzzle = puzzles[\"3x3x3\"];\n  const svgDisplay = new SVGDisplay(await puzzle.kpuzzle(), await puzzle.svg());\n  document.body.appendChild(svgDisplay.element());\n  svgDisplay.setAlg(Alg.fromString(\"R U R'\"));\n})();\n"],
+  "mappings": "sUAKA,IAAMA,EAAN,KAAiB,CAEf,YAAoBC,EAAkBC,EAAa,CAA/B,aAAAD,EAClB,KAAK,IAAM,IAAIE,EAA8BF,EAASC,CAAG,CAC3D,CAEO,SAAuB,CAC5B,OAAO,KAAK,IAAI,cAClB,CAEO,OAAOE,EAAgB,CAC5B,KAAK,IAAI,KAAK,KAAK,QAAQ,oBAAoBA,CAAG,EAAE,SAAS,CAAC,CAChE,CACF,GAEC,SAAY,CACX,IAAMC,EAASC,EAAQ,SACjBC,EAAa,IAAIP,EAAW,MAAMK,EAAO,QAAQ,EAAG,MAAMA,EAAO,IAAI,CAAC,EAC5E,SAAS,KAAK,YAAYE,EAAW,QAAQ,CAAC,EAC9CA,EAAW,OAAOC,EAAI,WAAW,QAAQ,CAAC,CAC5C,GAAG",
+  "names": ["SVGDisplay", "kpuzzle", "svg", "KPuzzleSVGWrapper", "alg", "puzzle", "puzzles", "svgDisplay", "Alg"]
+}

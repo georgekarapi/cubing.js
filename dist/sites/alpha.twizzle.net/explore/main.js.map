@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/sites/alpha.twizzle.net/explore/main.ts"],
+  "sourcesContent": ["import { TwizzleExplorerApp } from \"./app\";\n\n// Expose as a global for debugging.\n(globalThis as any).app = new TwizzleExplorerApp();\n"],
+  "mappings": "kaAGC,WAAmB,IAAM,IAAIA",
+  "names": ["TwizzleExplorerApp"]
+}

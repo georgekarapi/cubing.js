@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/sites/alpha.twizzle.net/edit/strings.ts"],
+  "sourcesContent": ["export const APP_TITLE = \"\u270D\uFE0F Twizzle Editor \u1D2C\u1D38\u1D3E\u1D34\u1D2C\";\n"],
+  "mappings": "AAAO,IAAMA,EAAY",
+  "names": ["APP_TITLE"]
+}

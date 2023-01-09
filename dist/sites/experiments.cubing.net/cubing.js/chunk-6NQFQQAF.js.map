@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/sites/experiments.cubing.net/cubing.js/play/websocket-proxy.ts"],
+  "sourcesContent": ["import {\n  ExperimentalProxyEvent,\n  ExperimentalWebSocketProxyReceiver,\n} from \"../../../../cubing/stream\";\n\nexport class CallbackProxyReceiver extends ExperimentalWebSocketProxyReceiver {\n  constructor(\n    url: string,\n    private callback: (e: ExperimentalProxyEvent) => void,\n  ) {\n    super(url, url);\n  }\n\n  onProxyEvent(e: ExperimentalProxyEvent): void {\n    this.callback(e);\n  }\n}\n"],
+  "mappings": "wCAKO,IAAMA,EAAN,cAAoCC,CAAmC,CAC5E,YACEC,EACQC,EACR,CACA,MAAMD,EAAKA,CAAG,EAFN,cAAAC,CAGV,CAEA,aAAa,EAAiC,CAC5C,KAAK,SAAS,CAAC,CACjB,CACF",
+  "names": ["CallbackProxyReceiver", "WebSocketProxyReceiver", "url", "callback"]
+}

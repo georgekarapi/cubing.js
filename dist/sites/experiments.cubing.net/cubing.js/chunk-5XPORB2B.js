@@ -1,0 +1,2 @@
+var s=class{constructor(e,t,i){this.elem=e;this.prefix=t;this.validSuffixes=i}#e=null;clearValue(){this.#e&&this.elem.contentWrapper.classList.remove(this.#e),this.#e=null}setValue(e){if(!this.validSuffixes.includes(e))throw new Error(`Invalid suffix: ${e}`);let t=`${this.prefix}${e}`,i=this.#e!==t;return i&&(this.clearValue(),this.elem.contentWrapper.classList.add(t),this.#e=t),i}};export{s as a};
+//# sourceMappingURL=chunk-5XPORB2B.js.map

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/cubing/scramble/index.ts"],
+  "sourcesContent": ["/**\n * For a walkthrough, see:\n *\n * https://js.cubing.net/cubing/scramble/\n *\n * @packageDocumentation\n */\n\nexport { randomScrambleForEvent } from \"../search/cubing-private\";\n"],
+  "mappings": "gFAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,4BAAAE",
+  "names": ["scramble_exports", "__export", "randomScrambleForEvent"]
+}

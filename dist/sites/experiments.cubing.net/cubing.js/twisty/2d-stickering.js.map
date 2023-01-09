@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/2d-stickering.ts"],
+  "sourcesContent": ["import { demo } from \"./stickering-demo-algs\";\n\ndemo(\"2D\");\n"],
+  "mappings": "2UAEAA,EAAK,IAAI",
+  "names": ["demo"]
+}

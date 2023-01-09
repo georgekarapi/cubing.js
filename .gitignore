@@ -1,6 +1,5 @@
 /.temp
 /coverage
-/dist
 /node_modules
 
 # Created by `npm pack` by default.
@@ -16,14 +15,3 @@
 
 # Legacy package folders.
 # We can hopefully get rid of this once enough bundlers support the `exports` field in `package.json`.
-/alg
-/bluetooth
-/kpuzzle
-/notation
-/protocol
-/puzzle-geometry
-/puzzles
-/scramble
-/search
-/stream
-/twisty

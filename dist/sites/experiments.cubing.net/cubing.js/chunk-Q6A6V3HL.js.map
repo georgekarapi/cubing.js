@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/cubing/vendor/apache/comlink-everywhere/inside/index.ts"],
+  "sourcesContent": ["import { expose as comlinkExpose } from \"comlink\";\nimport nodeEndpoint from \"../node-adapter\";\n\nconst useNodeWorkarounds =\n  typeof globalThis.Worker === \"undefined\" &&\n  typeof (globalThis as any).WorkerNavigator === \"undefined\";\n\n// Mangled so that bundlers don't try to inline the source.\nconst worker_threads_mangled = \"node:w-orker-_threa-ds\";\nconst worker_threads_unmangled = () => worker_threads_mangled.replace(/-/g, \"\");\n\nexport async function nodeEndpointPort(): Promise<\n  Worker & {\n    nodeWorker?: import(\"node:worker_threads\").Worker;\n  }\n> {\n  const { parentPort } = await import(\n    /* @vite-ignore */ worker_threads_unmangled()\n  ).catch();\n  return nodeEndpoint(parentPort);\n}\n\nexport function expose(api: any) {\n  if (useNodeWorkarounds) {\n    (async () => {\n      comlinkExpose(api, await nodeEndpointPort());\n    })();\n  } else {\n    comlinkExpose(api);\n  }\n}\n"],
+  "mappings": "+CAGA,IAAMA,EACJ,OAAO,WAAW,OAAW,KAC7B,OAAQ,WAAmB,gBAAoB,IAG3CC,EAAyB,yBACzBC,EAA2B,IAAMD,EAAuB,QAAQ,KAAM,EAAE,EAE9E,eAAsBE,GAIpB,CACA,GAAM,CAAE,WAAAC,CAAW,EAAI,MAAM,OACRF,EAAyB,GAC5C,MAAM,EACR,OAAOG,EAAaD,CAAU,CAChC,CAEO,SAASE,EAAOC,EAAU,CAC3BP,GACD,SACCM,EAAcC,EAAK,MAAMJ,EAAiB,CAAC,GAC1C,EAEHG,EAAcC,CAAG,CAErB",
+  "names": ["useNodeWorkarounds", "worker_threads_mangled", "worker_threads_unmangled", "nodeEndpointPort", "parentPort", "node_adapter_default", "expose", "api"]
+}

@@ -13,6 +13,7 @@ export const twistyViewerWrapperCSS = new CSSSource(
   height: 100%;
   display: grid;
   overflow: hidden;
+  grid-template-rows: 1fr 0 0 0 0 0;
 }
 
 .wrapper > * {

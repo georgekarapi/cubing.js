@@ -48,7 +48,7 @@ export const twisty3DVantageCSS = new CSSSource(
 .wrapper > canvas {
   max-width: 100%;
   max-height: 100%;
-  animation: fade-in 0.25s ease-in;
+  // animation: fade-in 0.25s ease-in;
 }
 
 @keyframes fade-in {

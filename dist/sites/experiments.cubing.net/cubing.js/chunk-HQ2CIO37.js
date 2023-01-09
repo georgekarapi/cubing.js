@@ -1,0 +1,2 @@
+function r(t,e){let o=parseFloat(new URL(location.href).searchParams.get(t)||e.toString());return isNaN(o)?e:o}function n(t,e){return(new URL(location.href).searchParams.get(t)||(e?"true":"false"))==="true"}var a=r("height",1.5),s=r("scale",10),l=n("showControlPlanes",!0),i=n("daydream",!1),c=n("pg3d",!1),g=new URL(location.href).searchParams.get("socketOrigin")||null;console.table({initialHeight:a,initialScale:s,showControlPlanes:l,daydream:i,usePG3D:c,socketOrigin:g});export{a,s as b,l as c,i as d,c as e,g as f};
+//# sourceMappingURL=chunk-HQ2CIO37.js.map

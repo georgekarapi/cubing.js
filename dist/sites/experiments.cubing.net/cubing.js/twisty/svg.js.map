@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/svg.ts"],
+  "sourcesContent": ["import { TwistyPlayer } from \"../../../../cubing/twisty\";\n\nwindow.addEventListener(\"DOMContentLoaded\", () => {\n  const twistyPlayer = new TwistyPlayer({\n    puzzle: \"3x3x3\",\n    visualization: \"2D\",\n    alg: \"U M' U' R' U' R U M2' U' R' U r\",\n  });\n  document.body.appendChild(twistyPlayer);\n});\n"],
+  "mappings": "8SAEA,OAAO,iBAAiB,mBAAoB,IAAM,CAChD,IAAMA,EAAe,IAAIC,EAAa,CACpC,OAAQ,QACR,cAAe,KACf,IAAK,iCACP,CAAC,EACD,SAAS,KAAK,YAAYD,CAAY,CACxC,CAAC",
+  "names": ["twistyPlayer", "TwistyPlayer"]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/screenshot/index.ts"],
+  "sourcesContent": ["import { TwistyPlayer } from \"../../../../cubing/twisty\";\n\nwindow.addEventListener(\"DOMContentLoaded\", async () => {\n  const options = JSON.parse(\n    new URL(location.href).searchParams.get(\"options\") || \"{}\",\n  );\n  const twistyPlayer = new TwistyPlayer(options);\n  const screenshot = await twistyPlayer.experimentalScreenshot({\n    width: window.innerWidth,\n    height: window.innerHeight,\n  });\n\n  const img = document.createElement(\"img\");\n  img.id = \"screenshot\";\n  img.src = screenshot;\n\n  document.body.appendChild(img);\n});\n"],
+  "mappings": "8SAEA,OAAO,iBAAiB,mBAAoB,SAAY,CACtD,IAAMA,EAAU,KAAK,MACnB,IAAI,IAAI,SAAS,IAAI,EAAE,aAAa,IAAI,SAAS,GAAK,IACxD,EAEMC,EAAa,MADE,IAAIC,EAAaF,CAAO,EACP,uBAAuB,CAC3D,MAAO,OAAO,WACd,OAAQ,OAAO,WACjB,CAAC,EAEKG,EAAM,SAAS,cAAc,KAAK,EACxCA,EAAI,GAAK,aACTA,EAAI,IAAMF,EAEV,SAAS,KAAK,YAAYE,CAAG,CAC/B,CAAC",
+  "names": ["options", "screenshot", "TwistyPlayer", "img"]
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/cube3d-stickering.ts"],
+  "sourcesContent": ["import { demo } from \"./stickering-demo-algs\";\n\ndemo(\"3D\");\n"],
+  "mappings": "2UAEAA,EAAK,IAAI",
+  "names": ["demo"]
+}

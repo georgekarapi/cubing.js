@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../src/cubing/search/index.ts"],
+  "sourcesContent": ["export {\n  experimentalSolve3x3x3IgnoringCenters,\n  experimentalSolve2x2x2,\n  solveSkewb,\n  solvePyraminx,\n  solveMegaminx,\n  setDebug,\n  solveTwsearch as experimentalSolveTwsearch,\n} from \"./outside\";\n\n// TODO: handle centers properly.\nexport { random333State } from \"./inside/solve/puzzles/3x3x3\";\n"],
+  "mappings": "kKAAA,IAAAA,EAAA,GAAAC,EAAAD,EAAA,4BAAAE,EAAA,0CAAAC,EAAA,8BAAAC,EAAA,mBAAAC,EAAA,aAAAC,EAAA,kBAAAC,EAAA,kBAAAC,EAAA,eAAAC",
+  "names": ["search_exports", "__export", "experimentalSolve2x2x2", "experimentalSolve3x3x3IgnoringCenters", "solveTwsearch", "random333State", "setDebug", "solveMegaminx", "solvePyraminx", "solveSkewb"]
+}

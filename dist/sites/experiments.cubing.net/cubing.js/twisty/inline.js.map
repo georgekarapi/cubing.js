@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/inline.ts"],
+  "sourcesContent": ["import { Alg } from \"../../../../cubing/alg\";\nimport { TwistyPlayer } from \"../../../../cubing/twisty\";\n\nwindow.addEventListener(\"DOMContentLoaded\", () => {\n  const elem = document.querySelector(\"#js-init-example\")!;\n  // tslint:disable-next-line: no-unused-expression\n  elem.appendChild(\n    new TwistyPlayer({\n      puzzle: \"2x2x2\",\n      visualization: \"2D\",\n      alg: \"R2 F2 U2 R2\",\n      // playerConfig: {\n      //   experimentalBackgroundCheckered: false,\n      // },\n    }),\n  );\n});\n\nwindow.addEventListener(\"DOMContentLoaded\", () => {\n  const elem = document.querySelector(\"#custom-pg3d\")!;\n  // tslint:disable-next-line: no-unused-expression\n  elem.appendChild(\n    new TwistyPlayer({\n      alg: Alg.fromString(\"[[U', R], [U, R']]\"),\n      puzzle: \"megaminx\",\n      visualization: \"PG3D\",\n      backView: \"top-right\",\n      background: \"none\",\n    }),\n  );\n});\n"],
+  "mappings": "0TAGA,OAAO,iBAAiB,mBAAoB,IAAM,CACnC,SAAS,cAAc,kBAAkB,EAEjD,YACH,IAAIA,EAAa,CACf,OAAQ,QACR,cAAe,KACf,IAAK,aAIP,CAAC,CACH,CACF,CAAC,EAED,OAAO,iBAAiB,mBAAoB,IAAM,CACnC,SAAS,cAAc,cAAc,EAE7C,YACH,IAAIA,EAAa,CACf,IAAKC,EAAI,WAAW,oBAAoB,EACxC,OAAQ,WACR,cAAe,OACf,SAAU,YACV,WAAY,MACd,CAAC,CACH,CACF,CAAC",
+  "names": ["TwistyPlayer", "Alg"]
+}

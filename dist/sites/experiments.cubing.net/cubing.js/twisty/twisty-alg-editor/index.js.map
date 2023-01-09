@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/twisty-alg-editor/index.ts"],
+  "sourcesContent": ["import { TwistyPlayer } from \"../../../../../cubing/twisty\";\nimport { TwistyAlgEditor } from \"../../../../../cubing/twisty/views/TwistyAlgEditor/TwistyAlgEditor\";\n\nconst alg = `F U2 L2 B2 F' U L2 U R2 D2 L' B L2 B' R2 U2\n\ny x' // inspection\nU R2 U' F' L F' U' L' // XX-Cross + EO\nU' R U R' // 3rd slot\nR' U R U2' R' U R // 4th slot\nU R' U' R U' R' U2 R // OLL / ZBLL\nU // AUF\n\n// from http://cubesolv.es/solve/5757`;\nconst twistyPlayer = document.body.appendChild(new TwistyPlayer({ alg }));\ntwistyPlayer.id = \"plplpl\";\n\nconst twistyAlgEditor = new TwistyAlgEditor({});\ntwistyAlgEditor.setAttribute(\"for-twisty-player\", \"plplpl\");\n// twistyAlgEditor.algString = alg;\ndocument.body.appendChild(twistyAlgEditor);\n"],
+  "mappings": "8UAGA,IAAMA,EAAM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,uCAUNC,EAAe,SAAS,KAAK,YAAY,IAAIC,EAAa,CAAE,IAAAF,CAAI,CAAC,CAAC,EACxEC,EAAa,GAAK,SAElB,IAAME,EAAkB,IAAIC,EAAgB,CAAC,CAAC,EAC9CD,EAAgB,aAAa,oBAAqB,QAAQ,EAE1D,SAAS,KAAK,YAAYA,CAAe",
+  "names": ["alg", "twistyPlayer", "TwistyPlayer", "twistyAlgEditor", "TwistyAlgEditor"]
+}

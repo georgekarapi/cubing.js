@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../src/sites/alpha.twizzle.net/edit/dom.ts"],
+  "sourcesContent": ["// If the `selector` is not specified, the `tagName` is as `selector`.\n// TODO: Allow specifying classname. Requires classname validation to be safe.\n// TODO: Only query direct children.\nexport function findOrCreateChild<T extends HTMLElement>(\n  parentElem: Element,\n  selector: string,\n  tagName: string,\n): T {\n  const existingElem = parentElem.querySelector(selector);\n  if (existingElem) {\n    return existingElem as T;\n  }\n  const elem = document.createElement(tagName);\n  parentElem.appendChild(elem);\n  return elem as T;\n}\n\nexport function findOrCreateChildWithClass<T extends HTMLElement>(\n  parentElem: Element,\n  className: string,\n  tagName: string = \"div\",\n): T {\n  const elem = findOrCreateChild<T>(\n    parentElem,\n    `${tagName}.${className}`,\n    tagName,\n  );\n  elem.classList.add(className);\n  return elem;\n}\n"],
+  "mappings": "AAGO,SAASA,EACdC,EACAC,EACAC,EACG,CACH,IAAMC,EAAeH,EAAW,cAAcC,CAAQ,EACtD,GAAIE,EACF,OAAOA,EAET,IAAMC,EAAO,SAAS,cAAcF,CAAO,EAC3C,OAAAF,EAAW,YAAYI,CAAI,EACpBA,CACT,CAEO,SAASC,EACdL,EACAM,EACAJ,EAAkB,MACf,CACH,IAAME,EAAOL,EACXC,EACA,GAAGE,KAAWI,IACdJ,CACF,EACA,OAAAE,EAAK,UAAU,IAAIE,CAAS,EACrBF,CACT",
+  "names": ["findOrCreateChild", "parentElem", "selector", "tagName", "existingElem", "elem", "findOrCreateChildWithClass", "className"]
+}

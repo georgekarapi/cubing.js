@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/twisty-alg-viewer.ts"],
+  "sourcesContent": ["import { setAlgDebug } from \"../../../../cubing/alg\";\nimport type { TwistyPlayer } from \"../../../../cubing/twisty\";\n\nsetAlgDebug({ caretNISSNotationEnabled: true });\n\n(document.querySelector(\"#caret-niss-notation\") as TwistyPlayer).alg = `^(B L' U F2) // Nice start on inverse scramble\nD' B' U B2 R2 // Nice continuation\n^(R B R' U R' U2 R B) // F2L\n^(U2 R' U2 R' D' L F2 L' D R2) // LL\n\n// From https://fmcsolves.cubing.net/fmc_tutorial_ENG.pdf (page 45)`;\n"],
+  "mappings": "sEAGAA,EAAY,CAAE,yBAA0B,EAAK,CAAC,EAE7C,SAAS,cAAc,sBAAsB,EAAmB,IAAM;AAAA;AAAA;AAAA;AAAA;",
+  "names": ["setAlgDebug"]
+}

@@ -1,0 +1,2 @@
+function m(e,r=1){let t=new URL(location.href).searchParams.get(e);return t===null?r:parseFloat(t)}function l(e,r=1){let t=performance.now(),a=-24*r,o=!0;e.addEventListener("click",()=>{o=!1},{once:!0});function n(i){if(!o)return;requestAnimationFrame(n);let s=(i-t)/1e3*a;t=i,e.experimentalModel.twistySceneModel.orbitCoordinatesRequest.set((async()=>{let{longitude:u}=await e.experimentalModel.twistySceneModel.orbitCoordinates.get();return{longitude:u+s}})())}requestAnimationFrame(n)}export{m as a,l as b};
+//# sourceMappingURL=chunk-AKQLJETC.js.map

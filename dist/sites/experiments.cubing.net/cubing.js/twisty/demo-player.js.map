@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../src/sites/experiments.cubing.net/cubing.js/twisty/demo-player.ts"],
+  "sourcesContent": ["import \"../../../../cubing/twisty\";\nimport type { TwistyPlayer } from \"../../../../cubing/twisty\";\nimport { setGlobalPixelRatioOverride } from \"../../../../cubing/twisty/views/canvas\";\nimport { demoSpinCamera, getScaleParam } from \"./demo-spin-camera\";\n\nconst pixelRatio = new URL(location.href).searchParams.get(\"pixelRatio\");\nif (pixelRatio !== null) {\n  setGlobalPixelRatioOverride(parseFloat(pixelRatio));\n}\n\nconst twistyPlayer = document.querySelector(\"twisty-player\") as TwistyPlayer;\ntwistyPlayer.tempoScale = getScaleParam(\"tempo\");\ntwistyPlayer.experimentalModel.playingInfo.set({\n  playing: true,\n  loop: true,\n});\n\ndemoSpinCamera(\n  twistyPlayer,\n  getScaleParam(\"spinTempo\", getScaleParam(\"tempo\")),\n);\n"],
+  "mappings": "8VAKA,IAAMA,EAAa,IAAI,IAAI,SAAS,IAAI,EAAE,aAAa,IAAI,YAAY,EACnEA,IAAe,MACjBC,EAA4B,WAAWD,CAAU,CAAC,EAGpD,IAAME,EAAe,SAAS,cAAc,eAAe,EAC3DA,EAAa,WAAaC,EAAc,OAAO,EAC/CD,EAAa,kBAAkB,YAAY,IAAI,CAC7C,QAAS,GACT,KAAM,EACR,CAAC,EAEDE,EACEF,EACAC,EAAc,YAAaA,EAAc,OAAO,CAAC,CACnD",
+  "names": ["pixelRatio", "setGlobalPixelRatioOverride", "twistyPlayer", "getScaleParam", "demoSpinCamera"]
+}

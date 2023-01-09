@@ -1,0 +1,2 @@
+var t=class extends Promise{constructor(e){super(r=>{r()}),this._executor=e}static from(e){return new t(r=>{r(e())})}static resolve(e){return new t(r=>{r(e)})}static reject(e){return new t((r,i)=>{i(e)})}then(e,r){return this._promise=this._promise||new Promise(this._executor),this._promise.then(e,r)}catch(e){return this._promise=this._promise||new Promise(this._executor),this._promise.catch(e)}};function o(s){return new t(e=>{e(s())})}export{t as a,o as b};
+//# sourceMappingURL=chunk-QIOL4UIE.js.map

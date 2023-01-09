@@ -1,0 +1,2 @@
+import{d as t}from"./chunk-S4ZNJEAB.js";import{n as l,o as i,q as n}from"./chunk-K5RKCHW3.js";var r=class extends l{*traverseAlg(e){yield*e.childAlgNodes()}*traverseGrouping(e){yield e}*traverseMove(e){yield e}*traverseCommutator(e){yield e}*traverseConjugate(e){yield e}*traversePause(e){}*traverseNewline(e){}*traverseLineComment(e){}},a=i(r);function f(o){return new n(a(o)).experimentalSimplify({cancel:{puzzleSpecificModWrap:"canonical-centered"},puzzleSpecificSimplifyOptions:t.puzzleSpecificSimplifyOptions})}export{f as a};
+//# sourceMappingURL=chunk-3MWMUJBD.js.map
