@@ -95,7 +95,7 @@ export class TwistyAnimationController {
   private lastDatestamp: MillisecondTimestamp = 0;
   private lastTimestampPromise: Promise<MillisecondTimestamp>;
 
-  private scheduler: RenderScheduler = new RenderScheduler(
+  public scheduler: RenderScheduler = new RenderScheduler(
     this.animFrame.bind(this),
   );
 
