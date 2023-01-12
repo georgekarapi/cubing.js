@@ -217,6 +217,7 @@ var TwistyAnimationController = class {
     this.lastDatestamp = performance.now();
     this.lastTimestampPromise = this.#effectiveTimestampMilliseconds();
     this.scheduler.requestAnimFrame();
+    return this.lastTimestampPromise;
   }
   pause() {
     this.playing = false;

@@ -95,7 +95,7 @@ export class TwistyAnimationController {
   private lastDatestamp: MillisecondTimestamp = 0;
   private lastTimestampPromise: Promise<MillisecondTimestamp>;
 
-  public scheduler: RenderScheduler = new RenderScheduler(
+  private scheduler: RenderScheduler = new RenderScheduler(
     this.animFrame.bind(this),
   );
 
@@ -165,7 +165,7 @@ export class TwistyAnimationController {
     untilBoundary?: BoundaryType;
     autoSkipToOtherEndIfStartingAtBoundary?: boolean; // TODO What's a good short name that doesn't imply a more general looping concept?
     loop?: boolean;
-  }): Promise<void> {
+  }): Promise<number> {
     // TODO: We might need to cache all playing info?
     // Or maybe we don't have to worry about short-circuiting, since this is idempotent?
     // if (this.playing) {
@@ -198,6 +198,7 @@ export class TwistyAnimationController {
 
     // TODO: Save timestamp from model?
     this.scheduler.requestAnimFrame();
+    return this.lastTimestampPromise;
   }
 
   pause(): void {
