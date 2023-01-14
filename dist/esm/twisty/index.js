@@ -194,7 +194,13 @@ var TwistyAnimationController = class {
       this.play();
     }
   }
+  isPlaying() {
+    return this.scheduler.requestIsPending();
+  }
   async play(options) {
+    if (this.scheduler.requestIsPending()) {
+      return Promise.reject();
+    }
     const direction = options?.direction ?? 1 /* Forwards */;
     const coarseTimelineInfo = await this.model.coarseTimelineInfo.get();
     if (options?.autoSkipToOtherEndIfStartingAtBoundary ?? true) {
@@ -217,7 +223,7 @@ var TwistyAnimationController = class {
     this.lastDatestamp = performance.now();
     this.lastTimestampPromise = this.#effectiveTimestampMilliseconds();
     this.scheduler.requestAnimFrame();
-    return this.lastTimestampPromise;
+    return Promise.resolve(true);
   }
   pause() {
     this.playing = false;

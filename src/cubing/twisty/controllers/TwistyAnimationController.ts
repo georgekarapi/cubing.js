@@ -159,18 +159,26 @@ export class TwistyAnimationController {
     }
   }
 
+
+  isPlaying(): boolean {
+    return this.scheduler.requestIsPending();
+  }
+
   // TODO: bundle playing direction, and boundary into `toggle`.
   async play(options?: {
     direction?: SimpleDirection;
     untilBoundary?: BoundaryType;
     autoSkipToOtherEndIfStartingAtBoundary?: boolean; // TODO What's a good short name that doesn't imply a more general looping concept?
     loop?: boolean;
-  }): Promise<number> {
+  }): Promise<boolean> {
     // TODO: We might need to cache all playing info?
     // Or maybe we don't have to worry about short-circuiting, since this is idempotent?
     // if (this.playing) {
     //   return;
     // }
+    if(this.scheduler.requestIsPending()) {
+      return Promise.reject();
+    }
 
     const direction = options?.direction ?? Direction.Forwards;
 
@@ -198,7 +206,7 @@ export class TwistyAnimationController {
 
     // TODO: Save timestamp from model?
     this.scheduler.requestAnimFrame();
-    return this.lastTimestampPromise;
+    return Promise.resolve(true);
   }
 
   pause(): void {
